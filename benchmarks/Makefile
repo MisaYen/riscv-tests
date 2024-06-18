@@ -29,7 +29,6 @@ bmarks = \
 	qsort \
 	rsort \
 	towers \
-	vvadd \
 	memcpy \
 	multiply \
 	mm \
@@ -39,10 +38,11 @@ bmarks = \
 	mt-matmul \
 	mt-memcpy \
 	pmp \
-	vec-memcpy \
-	vec-daxpy \
-	vec-sgemm \
-	vec-strcmp \
+	# vvadd \
+	# vec-memcpy \
+	# vec-daxpy \
+	# vec-sgemm \
+	# vec-strcmp \
 
 #--------------------------------------------------------------------
 # Build rules
