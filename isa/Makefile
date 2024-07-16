@@ -48,6 +48,7 @@ RISCV_GCC ?= $(RISCV_PREFIX)gcc
 RISCV_GCC_OPTS ?= -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles
 RISCV_OBJDUMP ?= $(RISCV_PREFIX)objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data
 RISCV_SIM ?= spike
+RISCV_OBJCOPY ?= $(RISCV_PREFIX)objcopy -O binary
 
 vpath %.S $(src_dir)
 
@@ -57,7 +58,10 @@ vpath %.S $(src_dir)
 %.dump: %
 	$(RISCV_OBJDUMP) $< > $@
 
-%.mem: %
+%.bin: %
+	$(RISCV_OBJCOPY) $< $@
+
+%.mem: %.bin
 	../create_mem.sh $<
 
 %.out: %
@@ -123,6 +127,7 @@ $(eval $(call compile_template,rv64mi,-march=rv64g -mabi=lp64))
 endif
 
 tests_dump = $(addsuffix .dump, $(tests))
+tests_bin  = $(addsuffix .bin, $(tests))
 tests_mem  = $(addsuffix .mem, $(tests))
 tests_hex = $(addsuffix .hex, $(tests))
 tests_out = $(addsuffix .out, $(filter rv64%,$(tests)))
@@ -130,12 +135,12 @@ tests32_out = $(addsuffix .out32, $(filter rv32%,$(tests)))
 
 run: $(tests_out) $(tests32_out)
 
-junk += $(tests) $(tests_dump) $(tests_mem) $(tests_hex) $(tests_out) $(tests32_out)
+junk += $(tests) $(tests_dump) $(tests_bin) $(tests_mem) $(tests_hex) $(tests_out) $(tests32_out)
 
 #------------------------------------------------------------
 # Default
 
-all: $(tests_dump) $(tests_mem)
+all: $(tests_dump) $(tests_bin) $(tests_mem)
 
 #------------------------------------------------------------
 # Clean up
