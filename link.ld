@@ -6,10 +6,11 @@ SECTIONS
   . = 0x00000000;
   .text.init : { *(.text.init) }
   .text : { *(.text) }
-  .tohost : { *(.tohost) }
   . = 0x01000000;
   .data : { *(.data) }
   .bss : { *(.bss) }
+  . = 0xC2000000;
+  .tohost : { *(.tohost) }
   _end = .;
 }
 
