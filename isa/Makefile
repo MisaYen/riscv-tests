@@ -52,8 +52,8 @@ RISCV_OBJDUMP ?= $(RISCV_PREFIX)objdump -D
 RISCV_OBJDUMP_HUMAN ?= $(RISCV_PREFIX)objdump -S -M no-aliases -M numeric
 RISCV_SIM ?= spike
 RISCV_OBJCOPY ?= $(RISCV_PREFIX)objcopy -O binary
-OCFLAGS ?= --only-section=.text.init --only-section=.tohost --only-section=.riscv.attributes
-# OCFLAGS ?= --only-section=.text.init --only-section=.text --only-section=.tohost --only-section=.data --only-section=.bss
+# OCFLAGS ?= --only-section=.text.init --only-section=.tohost --only-section=.riscv.attributes
+OCFLAGS ?= --only-section=.text.init --only-section=.text --only-section=.tohost --only-section=.data --only-section=.bss --only-section=.riscv.attributes
 
 vpath %.S $(src_dir)
 
@@ -67,7 +67,7 @@ vpath %.S $(src_dir)
 	$(RISCV_OBJDUMP_HUMAN) $< > $@
 
 %.bin: %
-	$(RISCV_OBJCOPY) $< $@
+	$(RISCV_OBJCOPY) $(OCFLAGS) $< $@
 
 %.mem: %.bin
 	../create_mem.sh $<
