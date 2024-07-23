@@ -67,7 +67,7 @@ vpath %.S $(src_dir)
 	$(RISCV_OBJDUMP_HUMAN) $< > $@
 
 %.bin: %
-	$(RISCV_OBJCOPY) $(OCFLAGS) $< $@
+	$(RISCV_OBJCOPY) $< $@
 
 %.mem: %.bin
 	../create_mem.sh $<
