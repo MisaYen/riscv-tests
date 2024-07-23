@@ -16,7 +16,7 @@
 
 fname="${1%.*}"
 fsize=`stat -c %s $fname.bin`
-hexdump -ve '1/4 "%08x\n"' -n $fsize $fname.bin > $fname.mem
+hexdump -ve '1/4 "%08x\n"' -n 1000000 $fname.bin > $fname.mem
 
 # uncomment the following lines if you want to zero-padding
 # the memory files to a fixed line size (each line contains
