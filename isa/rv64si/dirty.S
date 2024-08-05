@@ -14,9 +14,17 @@
 #undef  DRAM_BASE
 #define DRAM_BASE 0x00010000
 
-#if (DRAM_BASE >> 30 << 30) != DRAM_BASE
-# error This test requires DRAM_BASE be SV39 superpage-aligned
+#if (DRAM_BASE >> 12 << 12) != DRAM_BASE
+# error This test requires DRAM_BASE be SV32 normalpage-aligned
 #endif
+
+; #if (DRAM_BASE >> 22 << 22) != DRAM_BASE
+; # error This test requires DRAM_BASE be SV32 superpage-aligned
+; #endif
+
+; #if (DRAM_BASE >> 30 << 30) != DRAM_BASE
+; # error This test requires DRAM_BASE be SV39 superpage-aligned
+; #endif
 
 RVTEST_RV64M
 RVTEST_CODE_BEGIN
