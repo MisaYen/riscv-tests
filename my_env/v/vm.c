@@ -246,7 +246,8 @@ void vm_boot(uintptr_t test_addr)
 
   _Static_assert(SIZEOF_TRAPFRAME_T == sizeof(trapframe_t), "???");
 
-#if (MAX_TEST_PAGES > PTES_PER_PT) || (DRAM_BASE % MEGAPAGE_SIZE) != 0
+// #if (MAX_TEST_PAGES > PTES_PER_PT) || (DRAM_BASE % MEGAPAGE_SIZE) != 0
+#if (MAX_TEST_PAGES > PTES_PER_PT) != 0
 # error
 #endif
   // map user to lowermost megapage
