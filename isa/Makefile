@@ -69,10 +69,10 @@ vpath %.S $(src_dir)
 # %.bin: %
 # 	$(RISCV_OBJCOPY) $< $@
 %.text.bin: %
-	$(RISCV_OBJCOPY) --only-section=.text.init --only-section=.text $< $@
+	$(RISCV_OBJCOPY) --only-section=.text $< $@
 
 %.data.bin: %
-	$(RISCV_OBJCOPY) --only-section=.data --only-section=.bss $< $@
+	$(RISCV_OBJCOPY) --only-section=.data $< $@
 
 # %.mem: %.bin
 # 	../create_mem.sh $<
