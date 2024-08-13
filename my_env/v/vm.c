@@ -27,7 +27,8 @@ static void do_tohost(uint64_t tohost_value)
   tohost = tohost_value;
 }
 
-#define pa2kva(pa) ((void*)(pa) - DRAM_BASE - MEGAPAGE_SIZE)
+#define pa2va(pa)  ((void*)(pa) - DRAM_BASE)                  // Instruction memory address Space
+#define pa2kva(pa) ((void*)(pa) - DRAM_BASE - MEGAPAGE_SIZE)  // Data memory address space
 #define uva2kva(pa) ((void*)(pa) - MEGAPAGE_SIZE)
 
 #define flush_page(addr) asm volatile ("sfence.vma %0" : : "r" (addr) : "memory")
@@ -286,7 +287,8 @@ void vm_boot(uintptr_t test_addr)
                 : : "r" (pmpc), "r" (pmpa) : "t0");
 
   // set up supervisor trap handling
-  write_csr(stvec, pa2kva(trap_entry));
+  write_csr(stvec, pa2va(trap_entry));      // trap_entry belong to instr. memory address space
+  // write_csr(stvec, pa2kva(trap_entry));
   write_csr(sscratch, pa2kva(read_csr(mscratch)));
   write_csr(medeleg,
     (1 << CAUSE_USER_ECALL) |
