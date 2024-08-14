@@ -66,16 +66,18 @@ vpath %.S $(src_dir)
 %.dump.human: %
 	$(RISCV_OBJDUMP_HUMAN) $< > $@
 
-# %.bin: %
-# 	$(RISCV_OBJCOPY) $< $@
+%.bin: %
+	$(RISCV_OBJCOPY) $< $@
+
 %.text.bin: %
 	$(RISCV_OBJCOPY) --only-section=.text $< $@
 
 %.data.bin: %
 	$(RISCV_OBJCOPY) --only-section=.data $< $@
 
-# %.mem: %.bin
-# 	../create_mem.sh $<
+%.mem: %.bin
+	../create_mem.sh $<
+
 %.text.mem: %.text.bin
 	../create_mem.sh $<
 
@@ -146,8 +148,10 @@ endif
 
 tests_dump = $(addsuffix .dump, $(tests))
 tests_dump_human = $(addsuffix .dump.human, $(tests))
+tests_bin  = $(addsuffix .bin, $(tests))
 tests_text_bin  = $(addsuffix .text.bin, $(tests))
 tests_data_bin  = $(addsuffix .data.bin, $(tests))
+tests_mem  = $(addsuffix .mem, $(tests))
 tests_text_mem  = $(addsuffix .text.mem, $(tests))
 tests_data_mem  = $(addsuffix .data.mem, $(tests))
 tests_hex = $(addsuffix .hex, $(tests))
@@ -156,12 +160,12 @@ tests32_out = $(addsuffix .out32, $(filter rv32%,$(tests)))
 
 run: $(tests_out) $(tests32_out)
 
-junk += $(tests) $(tests_dump) $(tests_dump_human) $(tests_text_bin) $(tests_data_bin) $(tests_text_mem) $(tests_data_mem) $(tests_hex) $(tests_out) $(tests32_out)
+junk += $(tests) $(tests_dump) $(tests_dump_human) $(tests_bin) $(tests_text_bin) $(tests_data_bin) $(tests_mem) $(tests_text_mem) $(tests_data_mem) $(tests_hex) $(tests_out) $(tests32_out)
 
 #------------------------------------------------------------
 # Default
 
-all: $(tests_dump) $(tests_dump_human) $(tests_text_bin) $(tests_data_bin) $(tests_text_mem) $(tests_data_mem)
+all: $(tests_dump) $(tests_dump_human) $(tests_bin)  $(tests_text_bin) $(tests_data_bin) $(tests_mem) $(tests_text_mem) $(tests_data_mem)
 
 #------------------------------------------------------------
 # Clean up

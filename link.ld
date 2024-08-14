@@ -1,9 +1,23 @@
 OUTPUT_ARCH( "riscv" )
 ENTRY(_start)
 
-MEMORY
+SECTIONS
 {
-    code_ram   (rx!rw) : ORIGIN = 0x00000000, LENGTH = 0x100000
+  . = 0x80000000;
+  .text.init : { *(.text.init) }
+  . = ALIGN(0x1000);
+  .tohost : { *(.tohost) }
+  . = ALIGN(0x1000);
+  .text : { *(.text) }
+  . = ALIGN(0x1000);
+  .data : { *(.data) }
+  .bss : { *(.bss) }
+  _end = .;
+}
+
+/* MEMORY
+{
+    code_ram   (rx!rw) : ORIGIN = 0x80000000, LENGTH = 0x100000
     data_ram   (rw!x)  : ORIGIN = 0x00400000, LENGTH = 0x100000
 }
 
@@ -30,7 +44,7 @@ SECTIONS
 
   _end = .;
 }
-
+ */
 
 /*
 //SECTIONS
