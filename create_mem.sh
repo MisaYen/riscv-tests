@@ -16,8 +16,8 @@
 
 fname="${1%.*}"
 fsize=`stat -c %s $fname.bin`
-od -An -tx1 -w8 $fname.bin | tr -d ' \n' | fold -w16 > $fname.mem
-# hexdump -ve '1/8 "%016x\n"' -n 1000000 $fname.bin > $fname.mem
+# od -An -tx1 -w8 $fname.bin | tr -d ' \n' | fold -w16 > $fname.mem
+hexdump -ve '1/8 "%016llx\n"' -n 1000000 $fname.bin > $fname.mem
 
 # uncomment the following lines if you want to zero-padding
 # the memory files to a fixed line size (each line contains
