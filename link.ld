@@ -6,6 +6,23 @@ SECTIONS
   . = 0x80000000;
   .text.init : { *(.text.init) }
   /* . = ALIGN(0x1000); */
+  /* .tohost : { *(.tohost) } */
+  . = ALIGN(0x1000);
+  .text : { *(.text) }
+  . = ALIGN(0x1000);
+  .data : { *(.data) }
+  .bss : { *(.bss) }
+  . = 0x80800000;
+  .tohost : { *(.tohost) }
+  _end = .;
+}
+
+
+/* SECTIONS
+{
+  . = 0x80000000;
+  .text.init : { *(.text.init) }
+  . = ALIGN(0x1000);    // comment this
   .tohost : { *(.tohost) }
   . = ALIGN(0x1000);
   .text : { *(.text) }
@@ -13,7 +30,8 @@ SECTIONS
   .data : { *(.data) }
   .bss : { *(.bss) }
   _end = .;
-}
+} */
+
 
 /* MEMORY
 {
