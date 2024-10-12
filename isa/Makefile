@@ -100,7 +100,7 @@ vpath %.S $(src_dir)
 define compile_template
 
 $$($(1)_pt_tests): $(1)-pt-%: $(1)/%.S
-	$$(RISCV_GCC) $(2) $$(RISCV_GCC_OPTS) -I$(src_dir)/../my_env/pt -I$(src_dir)/macros/scalar -T$(src_dir)/../link_p.ld $$< -o $$@
+	$$(RISCV_GCC) $(2) $$(RISCV_GCC_OPTS) -I$(src_dir)/../my_env/p -I$(src_dir)/macros/scalar -T$(src_dir)/../link_p.ld $$< -o $$@
 $(1)_tests += $$($(1)_pt_tests)
 
 
