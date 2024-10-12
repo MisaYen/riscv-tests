@@ -103,6 +103,7 @@ $$($(1)_pt_tests): $(1)-pt-%: $(1)/%.S
 	$$(RISCV_GCC) $(2) $$(RISCV_GCC_OPTS) -I$(src_dir)/../my_env/pt -I$(src_dir)/macros/scalar -T$(src_dir)/../link_p.ld $$< -o $$@
 $(1)_tests += $$($(1)_pt_tests)
 
+
 $(1)_tests_dump = $$(addsuffix .dump, $$($(1)_tests))
 
 $(1): $$($(1)_tests_dump)
