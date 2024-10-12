@@ -90,11 +90,10 @@ vpath %.S $(src_dir)
 %.out32: %
 	$(RISCV_SIM) --isa=rv32gc_zfh_zicboz_svnapot_zicntr_zba_zbb_zbc_zbs --misaligned $< 2> $@
 
+# $$($(1)_p_tests): $(1)-p-%: $(1)/%.S
+# 	$$(RISCV_GCC) $(2) $$(RISCV_GCC_OPTS) -I$(src_dir)/../my_env/p -I$(src_dir)/macros/scalar -T$(src_dir)/../link_p.ld $$< -o $$@
+# $(1)_tests += $$($(1)_p_tests)
 define compile_template
-
-$$($(1)_p_tests): $(1)-p-%: $(1)/%.S
-	$$(RISCV_GCC) $(2) $$(RISCV_GCC_OPTS) -I$(src_dir)/../my_env/p -I$(src_dir)/macros/scalar -T$(src_dir)/../link_p.ld $$< -o $$@
-$(1)_tests += $$($(1)_p_tests)
 
 $$($(1)_pt_tests): $(1)-pt-%: $(1)/%.S
 	$$(RISCV_GCC) $(2) $$(RISCV_GCC_OPTS) -I$(src_dir)/../my_env/pt -I$(src_dir)/macros/scalar -T$(src_dir)/../link_p.ld $$< -o $$@
