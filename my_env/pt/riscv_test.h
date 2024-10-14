@@ -9,11 +9,13 @@
 
 #undef EXTRA_INIT_TIMER
 #define EXTRA_INIT_TIMER                                                \
+        li a1, 0xF0004000;  /*load mtimecmp address*/                   \
+        li a2, 0xF000BFF8;  /*load mtime address*/                      \
         li a0, MIP_MTIP;                                                \
         csrs mie, a0;                                                   \
-        csrr a0, mtime;                                                 \
+        lw a0, 0(a2);       /*csrr a0, mtime;*/                         \
         addi a0, a0, TIMER_INTERVAL;                                    \
-        csrw mtimecmp, a0;                                              \
+        sw a0, 0(a1);      /*csrw mtimecmp, a0;*/                       \
 
 #if SSTATUS_XS != 0x18000
 # error
