@@ -29,10 +29,10 @@
         add t5, t5, -IRQ_M_TIMER;                                       \
         bnez t5, other_exception; /* other interrups shouldn't happen */\
         li t6, 0xF000BFF8;                                              \
-        li t7, 0xF0004000;                                              \
+        li t4, 0xF0004000;                                              \
         lw t5, 0(t6);             /*csrr t5, mtime;*/                   \
         addi t5, t5, TIMER_INTERVAL;                                    \
-        sw t5, 0(t7);             /*csrw mtimecmp, t5;*/                \
+        sw t5, 0(t4);             /*csrw mtimecmp, t5;*/                \
         mret;                                                           \
 
 //-----------------------------------------------------------------------
