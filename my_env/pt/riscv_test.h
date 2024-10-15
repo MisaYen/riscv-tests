@@ -5,7 +5,7 @@
 
 #include "../p/riscv_test.h"
 
-#define TIMER_INTERVAL 2
+#define TIMER_INTERVAL 200
 
 #undef EXTRA_INIT_TIMER
 #define EXTRA_INIT_TIMER                                                \
