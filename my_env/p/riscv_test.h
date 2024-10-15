@@ -223,8 +223,7 @@ reset_vector:                                                           \
                (1 << CAUSE_USER_ECALL) |                                \
                (1 << CAUSE_BREAKPOINT);                                 \
         csrw medeleg, t0;                                               \
-1:      csrwi mstatus, 6152;  /*csrwi mstatus, 0; h'1808 for timer interrupt*/ \
-        init;                                                           \
+1:      init;                   /*csrwi mstatus, 0;*/                   \
         EXTRA_INIT;                                                     \
         EXTRA_INIT_TIMER;                                               \
         la t0, 1f;                                                      \
