@@ -93,14 +93,16 @@ vpath %.S $(src_dir)
 # $$($(1)_p_tests): $(1)-p-%: $(1)/%.S
 # 	$$(RISCV_GCC) $(2) $$(RISCV_GCC_OPTS) -I$(src_dir)/../my_env/p -I$(src_dir)/macros/scalar -T$(src_dir)/../link_p.ld $$< -o $$@
 # $(1)_tests += $$($(1)_p_tests)
-# $$($(1)_v_tests): $(1)-v-%: $(1)/%.S
-# 	$$(RISCV_GCC) $(2) $$(RISCV_GCC_OPTS) -DENTROPY=0x$$(shell echo \$$@ | md5sum | cut -c 1-7) -std=gnu99 -O2 -I$(src_dir)/../my_env/v -I$(src_dir)/macros/scalar -T$(src_dir)/../link.ld $(src_dir)/../my_env/v/entry.S $(src_dir)/../my_env/v/*.c $$< -o $$@
-# $(1)_tests += $$($(1)_v_tests)
+
 define compile_template
 
 $$($(1)_p_tests): $(1)-p-%: $(1)/%.S
 	$$(RISCV_GCC) $(2) $$(RISCV_GCC_OPTS) -I$(src_dir)/../my_env/pt -I$(src_dir)/macros/scalar -T$(src_dir)/../link_p.ld $$< -o $$@
 $(1)_tests += $$($(1)_p_tests)
+
+$$($(1)_v_tests): $(1)-v-%: $(1)/%.S
+	$$(RISCV_GCC) $(2) $$(RISCV_GCC_OPTS) -DENTROPY=0x$$(shell echo \$$@ | md5sum | cut -c 1-7) -std=gnu99 -O2 -I$(src_dir)/../my_env/v -I$(src_dir)/macros/scalar -T$(src_dir)/../link.ld $(src_dir)/../my_env/v/entry.S $(src_dir)/../my_env/v/*.c $$< -o $$@
+$(1)_tests += $$($(1)_v_tests)
 
 $(1)_tests_dump = $$(addsuffix .dump, $$($(1)_tests))
 
