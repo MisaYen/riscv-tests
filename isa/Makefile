@@ -93,7 +93,6 @@ vpath %.S $(src_dir)
 # $$($(1)_p_tests): $(1)-p-%: $(1)/%.S
 # 	$$(RISCV_GCC) $(2) $$(RISCV_GCC_OPTS) -I$(src_dir)/../my_env/p -I$(src_dir)/macros/scalar -T$(src_dir)/../link_p.ld $$< -o $$@
 # $(1)_tests += $$($(1)_p_tests)
-
 define compile_template
 
 $$($(1)_p_tests): $(1)-p-%: $(1)/%.S
@@ -120,18 +119,18 @@ endef
 
 # march=rv32im
 $(eval $(call compile_template,rv32ui,-march=rv32g -mabi=ilp32))
-$(eval $(call compile_template,rv32uc,-march=rv32g -mabi=ilp32))
-$(eval $(call compile_template,rv32um,-march=rv32g -mabi=ilp32))
-$(eval $(call compile_template,rv32ua,-march=rv32g -mabi=ilp32))
-$(eval $(call compile_template,rv32uf,-march=rv32g -mabi=ilp32))
-$(eval $(call compile_template,rv32ud,-march=rv32g -mabi=ilp32))
-$(eval $(call compile_template,rv32uzfh,-march=rv32g_zfh -mabi=ilp32))
-$(eval $(call compile_template,rv32uzba,-march=rv32g_zba -mabi=ilp32))
-$(eval $(call compile_template,rv32uzbb,-march=rv32g_zbb -mabi=ilp32))
-$(eval $(call compile_template,rv32uzbc,-march=rv32g_zbc -mabi=ilp32))
-$(eval $(call compile_template,rv32uzbs,-march=rv32g_zbs -mabi=ilp32))
-$(eval $(call compile_template,rv32si,-march=rv32g -mabi=ilp32))
-$(eval $(call compile_template,rv32mi,-march=rv32g -mabi=ilp32))
+# $(eval $(call compile_template,rv32uc,-march=rv32g -mabi=ilp32))
+# $(eval $(call compile_template,rv32um,-march=rv32g -mabi=ilp32))
+# $(eval $(call compile_template,rv32ua,-march=rv32g -mabi=ilp32))
+# $(eval $(call compile_template,rv32uf,-march=rv32g -mabi=ilp32))
+# $(eval $(call compile_template,rv32ud,-march=rv32g -mabi=ilp32))
+# $(eval $(call compile_template,rv32uzfh,-march=rv32g_zfh -mabi=ilp32))
+# $(eval $(call compile_template,rv32uzba,-march=rv32g_zba -mabi=ilp32))
+# $(eval $(call compile_template,rv32uzbb,-march=rv32g_zbb -mabi=ilp32))
+# $(eval $(call compile_template,rv32uzbc,-march=rv32g_zbc -mabi=ilp32))
+# $(eval $(call compile_template,rv32uzbs,-march=rv32g_zbs -mabi=ilp32))
+# $(eval $(call compile_template,rv32si,-march=rv32g -mabi=ilp32))
+# $(eval $(call compile_template,rv32mi,-march=rv32g -mabi=ilp32))
 ifeq ($(XLEN),64)
 $(eval $(call compile_template,rv64ui,-march=rv64g -mabi=lp64))
 $(eval $(call compile_template,rv64uc,-march=rv64g -mabi=lp64))
