@@ -1,35 +1,779 @@
 mkdir -p benchmarks
 make -C benchmarks -f /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/Makefile src_dir=/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks XLEN=32 
 make[1]: Entering directory '/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks'
-riscv32-unknown-elf-gcc -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/../env -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/median -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/qsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/rsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/towers -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/multiply -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mm -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/dhrystone -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/spmv -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-vvadd -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-matmul -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/pmp -DPREALLOCATE=1 -mcmodel=medany -static -std=gnu99 -O2 -ffast-math -fno-common -fno-builtin-printf -fno-tree-loop-distribute-patterns -march=rv32g -mabi=ilp32  -o median.riscv /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/median/median_main.c /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/median/median.c  /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/syscalls.c /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/crt.S -static -nostdlib -nostartfiles -lm -lgcc -T /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/test.ld
-riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data median.riscv > median.riscv.dump
-riscv32-unknown-elf-gcc -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/../env -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/median -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/qsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/rsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/towers -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/multiply -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mm -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/dhrystone -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/spmv -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-vvadd -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-matmul -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/pmp -DPREALLOCATE=1 -mcmodel=medany -static -std=gnu99 -O2 -ffast-math -fno-common -fno-builtin-printf -fno-tree-loop-distribute-patterns -march=rv32g -mabi=ilp32  -o qsort.riscv /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/qsort/qsort_main.c  /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/syscalls.c /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/crt.S -static -nostdlib -nostartfiles -lm -lgcc -T /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/test.ld
-riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data qsort.riscv > qsort.riscv.dump
-riscv32-unknown-elf-gcc -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/../env -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/median -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/qsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/rsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/towers -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/multiply -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mm -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/dhrystone -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/spmv -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-vvadd -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-matmul -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/pmp -DPREALLOCATE=1 -mcmodel=medany -static -std=gnu99 -O2 -ffast-math -fno-common -fno-builtin-printf -fno-tree-loop-distribute-patterns -march=rv32g -mabi=ilp32  -o rsort.riscv /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/rsort/rsort.c  /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/syscalls.c /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/crt.S -static -nostdlib -nostartfiles -lm -lgcc -T /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/test.ld
-riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rsort.riscv > rsort.riscv.dump
-riscv32-unknown-elf-gcc -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/../env -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/median -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/qsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/rsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/towers -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/multiply -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mm -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/dhrystone -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/spmv -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-vvadd -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-matmul -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/pmp -DPREALLOCATE=1 -mcmodel=medany -static -std=gnu99 -O2 -ffast-math -fno-common -fno-builtin-printf -fno-tree-loop-distribute-patterns -march=rv32g -mabi=ilp32  -o towers.riscv /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/towers/towers_main.c  /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/syscalls.c /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/crt.S -static -nostdlib -nostartfiles -lm -lgcc -T /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/test.ld
-riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data towers.riscv > towers.riscv.dump
-riscv32-unknown-elf-gcc -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/../env -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/median -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/qsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/rsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/towers -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/multiply -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mm -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/dhrystone -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/spmv -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-vvadd -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-matmul -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/pmp -DPREALLOCATE=1 -mcmodel=medany -static -std=gnu99 -O2 -ffast-math -fno-common -fno-builtin-printf -fno-tree-loop-distribute-patterns -march=rv32g -mabi=ilp32  -o memcpy.riscv /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/memcpy/memcpy_main.c  /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/syscalls.c /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/crt.S -static -nostdlib -nostartfiles -lm -lgcc -T /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/test.ld
-riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data memcpy.riscv > memcpy.riscv.dump
-riscv32-unknown-elf-gcc -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/../env -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/median -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/qsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/rsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/towers -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/multiply -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mm -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/dhrystone -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/spmv -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-vvadd -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-matmul -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/pmp -DPREALLOCATE=1 -mcmodel=medany -static -std=gnu99 -O2 -ffast-math -fno-common -fno-builtin-printf -fno-tree-loop-distribute-patterns -march=rv32g -mabi=ilp32  -o multiply.riscv /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/multiply/multiply_main.c /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/multiply/multiply.c  /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/syscalls.c /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/crt.S -static -nostdlib -nostartfiles -lm -lgcc -T /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/test.ld
-riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data multiply.riscv > multiply.riscv.dump
-riscv32-unknown-elf-gcc -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/../env -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/median -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/qsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/rsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/towers -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/multiply -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mm -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/dhrystone -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/spmv -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-vvadd -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-matmul -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/pmp -DPREALLOCATE=1 -mcmodel=medany -static -std=gnu99 -O2 -ffast-math -fno-common -fno-builtin-printf -fno-tree-loop-distribute-patterns -march=rv32g -mabi=ilp32  -o mm.riscv /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mm/mm.c /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mm/mm_main.c  /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/syscalls.c /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/crt.S -static -nostdlib -nostartfiles -lm -lgcc -T /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/test.ld
-riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data mm.riscv > mm.riscv.dump
-riscv32-unknown-elf-gcc -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/../env -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/median -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/qsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/rsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/towers -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/multiply -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mm -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/dhrystone -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/spmv -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-vvadd -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-matmul -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/pmp -DPREALLOCATE=1 -mcmodel=medany -static -std=gnu99 -O2 -ffast-math -fno-common -fno-builtin-printf -fno-tree-loop-distribute-patterns -march=rv32g -mabi=ilp32  -o dhrystone.riscv /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/dhrystone/dhrystone.c /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/dhrystone/dhrystone_main.c  /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/syscalls.c /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/crt.S -static -nostdlib -nostartfiles -lm -lgcc -T /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/test.ld
-riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data dhrystone.riscv > dhrystone.riscv.dump
-riscv32-unknown-elf-gcc -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/../env -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/median -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/qsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/rsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/towers -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/multiply -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mm -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/dhrystone -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/spmv -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-vvadd -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-matmul -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/pmp -DPREALLOCATE=1 -mcmodel=medany -static -std=gnu99 -O2 -ffast-math -fno-common -fno-builtin-printf -fno-tree-loop-distribute-patterns -march=rv32g -mabi=ilp32  -o spmv.riscv /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/spmv/spmv_main.c  /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/syscalls.c /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/crt.S -static -nostdlib -nostartfiles -lm -lgcc -T /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/test.ld
-riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data spmv.riscv > spmv.riscv.dump
-riscv32-unknown-elf-gcc -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/../env -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/median -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/qsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/rsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/towers -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/multiply -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mm -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/dhrystone -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/spmv -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-vvadd -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-matmul -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/pmp -DPREALLOCATE=1 -mcmodel=medany -static -std=gnu99 -O2 -ffast-math -fno-common -fno-builtin-printf -fno-tree-loop-distribute-patterns -march=rv32g -mabi=ilp32  -o mt-vvadd.riscv /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-vvadd/mt-vvadd.c /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-vvadd/vvadd.c  /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/syscalls.c /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/crt.S -static -nostdlib -nostartfiles -lm -lgcc -T /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/test.ld
-riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data mt-vvadd.riscv > mt-vvadd.riscv.dump
-riscv32-unknown-elf-gcc -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/../env -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/median -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/qsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/rsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/towers -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/multiply -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mm -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/dhrystone -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/spmv -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-vvadd -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-matmul -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/pmp -DPREALLOCATE=1 -mcmodel=medany -static -std=gnu99 -O2 -ffast-math -fno-common -fno-builtin-printf -fno-tree-loop-distribute-patterns -march=rv32g -mabi=ilp32  -o mt-matmul.riscv /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-matmul/mt-matmul.c /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-matmul/matmul.c  /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/syscalls.c /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/crt.S -static -nostdlib -nostartfiles -lm -lgcc -T /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/test.ld
-riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data mt-matmul.riscv > mt-matmul.riscv.dump
-riscv32-unknown-elf-gcc -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/../env -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/median -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/qsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/rsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/towers -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/multiply -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mm -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/dhrystone -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/spmv -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-vvadd -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-matmul -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/pmp -DPREALLOCATE=1 -mcmodel=medany -static -std=gnu99 -O2 -ffast-math -fno-common -fno-builtin-printf -fno-tree-loop-distribute-patterns -march=rv32g -mabi=ilp32  -o mt-memcpy.riscv /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-memcpy/mt-memcpy.c  /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/syscalls.c /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/crt.S -static -nostdlib -nostartfiles -lm -lgcc -T /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/test.ld
-riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data mt-memcpy.riscv > mt-memcpy.riscv.dump
-riscv32-unknown-elf-gcc -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/../env -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/median -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/qsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/rsort -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/towers -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/multiply -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mm -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/dhrystone -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/spmv -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-vvadd -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-matmul -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/mt-memcpy -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/pmp -DPREALLOCATE=1 -mcmodel=medany -static -std=gnu99 -O2 -ffast-math -fno-common -fno-builtin-printf -fno-tree-loop-distribute-patterns -march=rv32g -mabi=ilp32  -o pmp.riscv /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/pmp/pmp.c  /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/syscalls.c /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/crt.S -static -nostdlib -nostartfiles -lm -lgcc -T /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks/common/test.ld
-riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data pmp.riscv > pmp.riscv.dump
+make[1]: Nothing to be done for 'default'.
 make[1]: Leaving directory '/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/benchmarks'
 mkdir -p isa
 make -C isa -f /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/Makefile src_dir=/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa XLEN=32 
 make[1]: Entering directory '/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa'
-make[1]: Nothing to be done for 'default'.
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -DENTROPY=0xe9af36f -std=gnu99 -O2 -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link.ld /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/entry.S /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/*.c rv32ui/sh.S -o rv32ui-v-sh
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32ui-v-sh > rv32ui-v-sh.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -DENTROPY=0x1adafaf -std=gnu99 -O2 -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link.ld /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/entry.S /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/*.c rv32ui/sw.S -o rv32ui-v-sw
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32ui-v-sw > rv32ui-v-sw.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -DENTROPY=0x2a24e47 -std=gnu99 -O2 -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link.ld /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/entry.S /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/*.c rv32ui/sll.S -o rv32ui-v-sll
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32ui-v-sll > rv32ui-v-sll.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -DENTROPY=0xfdfb478 -std=gnu99 -O2 -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link.ld /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/entry.S /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/*.c rv32ui/slli.S -o rv32ui-v-slli
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32ui-v-slli > rv32ui-v-slli.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -DENTROPY=0xe44a294 -std=gnu99 -O2 -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link.ld /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/entry.S /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/*.c rv32ui/slt.S -o rv32ui-v-slt
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32ui-v-slt > rv32ui-v-slt.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -DENTROPY=0xff6cd57 -std=gnu99 -O2 -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link.ld /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/entry.S /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/*.c rv32ui/slti.S -o rv32ui-v-slti
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32ui-v-slti > rv32ui-v-slti.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -DENTROPY=0x603e730 -std=gnu99 -O2 -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link.ld /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/entry.S /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/*.c rv32ui/sltiu.S -o rv32ui-v-sltiu
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32ui-v-sltiu > rv32ui-v-sltiu.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -DENTROPY=0x16d5098 -std=gnu99 -O2 -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link.ld /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/entry.S /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/*.c rv32ui/sltu.S -o rv32ui-v-sltu
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32ui-v-sltu > rv32ui-v-sltu.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -DENTROPY=0x01565b4 -std=gnu99 -O2 -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link.ld /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/entry.S /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/*.c rv32ui/sra.S -o rv32ui-v-sra
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32ui-v-sra > rv32ui-v-sra.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -DENTROPY=0x390be31 -std=gnu99 -O2 -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link.ld /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/entry.S /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/*.c rv32ui/srai.S -o rv32ui-v-srai
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32ui-v-srai > rv32ui-v-srai.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -DENTROPY=0xfc20892 -std=gnu99 -O2 -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link.ld /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/entry.S /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/*.c rv32ui/srl.S -o rv32ui-v-srl
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32ui-v-srl > rv32ui-v-srl.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -DENTROPY=0x8babe33 -std=gnu99 -O2 -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link.ld /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/entry.S /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/*.c rv32ui/srli.S -o rv32ui-v-srli
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32ui-v-srli > rv32ui-v-srli.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -DENTROPY=0x59d4070 -std=gnu99 -O2 -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link.ld /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/entry.S /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/*.c rv32ui/sub.S -o rv32ui-v-sub
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32ui-v-sub > rv32ui-v-sub.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -DENTROPY=0x09f72e7 -std=gnu99 -O2 -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link.ld /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/entry.S /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/*.c rv32ui/xor.S -o rv32ui-v-xor
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32ui-v-xor > rv32ui-v-xor.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -DENTROPY=0xd585220 -std=gnu99 -O2 -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link.ld /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/entry.S /home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/v/*.c rv32ui/xori.S -o rv32ui-v-xori
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32ui-v-xori > rv32ui-v-xori.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/p -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link_p.ld rv32si/csr.S -o rv32si-p-csr
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32si-p-csr > rv32si-p-csr.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/p -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link_p.ld rv32si/dirty.S -o rv32si-p-dirty
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32si-p-dirty > rv32si-p-dirty.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/p -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link_p.ld rv32si/ma_fetch.S -o rv32si-p-ma_fetch
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32si-p-ma_fetch > rv32si-p-ma_fetch.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/p -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link_p.ld rv32si/scall.S -o rv32si-p-scall
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32si-p-scall > rv32si-p-scall.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/p -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link_p.ld rv32si/sbreak.S -o rv32si-p-sbreak
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32si-p-sbreak > rv32si-p-sbreak.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/p -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link_p.ld rv32si/wfi.S -o rv32si-p-wfi
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32si-p-wfi > rv32si-p-wfi.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/p -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link_p.ld rv32mi/breakpoint.S -o rv32mi-p-breakpoint
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32mi-p-breakpoint > rv32mi-p-breakpoint.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/p -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link_p.ld rv32mi/csr.S -o rv32mi-p-csr
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32mi-p-csr > rv32mi-p-csr.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/p -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link_p.ld rv32mi/mcsr.S -o rv32mi-p-mcsr
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32mi-p-mcsr > rv32mi-p-mcsr.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/p -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link_p.ld rv32mi/illegal.S -o rv32mi-p-illegal
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32mi-p-illegal > rv32mi-p-illegal.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/p -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link_p.ld rv32mi/ma_fetch.S -o rv32mi-p-ma_fetch
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32mi-p-ma_fetch > rv32mi-p-ma_fetch.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/p -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link_p.ld rv32mi/ma_addr.S -o rv32mi-p-ma_addr
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32mi-p-ma_addr > rv32mi-p-ma_addr.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/p -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link_p.ld rv32mi/scall.S -o rv32mi-p-scall
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32mi-p-scall > rv32mi-p-scall.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/p -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link_p.ld rv32mi/sbreak.S -o rv32mi-p-sbreak
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32mi-p-sbreak > rv32mi-p-sbreak.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/p -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link_p.ld rv32mi/shamt.S -o rv32mi-p-shamt
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32mi-p-shamt > rv32mi-p-shamt.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/p -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link_p.ld rv32mi/lw-misaligned.S -o rv32mi-p-lw-misaligned
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32mi-p-lw-misaligned > rv32mi-p-lw-misaligned.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/p -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link_p.ld rv32mi/lh-misaligned.S -o rv32mi-p-lh-misaligned
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32mi-p-lh-misaligned > rv32mi-p-lh-misaligned.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/p -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link_p.ld rv32mi/sh-misaligned.S -o rv32mi-p-sh-misaligned
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32mi-p-sh-misaligned > rv32mi-p-sh-misaligned.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/p -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link_p.ld rv32mi/sw-misaligned.S -o rv32mi-p-sw-misaligned
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32mi-p-sw-misaligned > rv32mi-p-sw-misaligned.dump
+riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../my_env/p -I/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/macros/scalar -T/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa/../link_p.ld rv32mi/zicntr.S -o rv32mi-p-zicntr
+riscv32-unknown-elf-objdump --disassemble-all --disassemble-zeroes --section=.text --section=.text.startup --section=.text.init --section=.data rv32mi-p-zicntr > rv32mi-p-zicntr.dump
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-simple > rv32ui-p-simple.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-add > rv32ui-p-add.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-addi > rv32ui-p-addi.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-and > rv32ui-p-and.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-andi > rv32ui-p-andi.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-auipc > rv32ui-p-auipc.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-beq > rv32ui-p-beq.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-bge > rv32ui-p-bge.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-bgeu > rv32ui-p-bgeu.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-blt > rv32ui-p-blt.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-bltu > rv32ui-p-bltu.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-bne > rv32ui-p-bne.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-fence_i > rv32ui-p-fence_i.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-jal > rv32ui-p-jal.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-jalr > rv32ui-p-jalr.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-lb > rv32ui-p-lb.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-lbu > rv32ui-p-lbu.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-lh > rv32ui-p-lh.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-lhu > rv32ui-p-lhu.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-lw > rv32ui-p-lw.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-lui > rv32ui-p-lui.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-ma_data > rv32ui-p-ma_data.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-or > rv32ui-p-or.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-ori > rv32ui-p-ori.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-sb > rv32ui-p-sb.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-sh > rv32ui-p-sh.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-sw > rv32ui-p-sw.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-sll > rv32ui-p-sll.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-slli > rv32ui-p-slli.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-slt > rv32ui-p-slt.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-slti > rv32ui-p-slti.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-sltiu > rv32ui-p-sltiu.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-sltu > rv32ui-p-sltu.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-sra > rv32ui-p-sra.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-srai > rv32ui-p-srai.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-srl > rv32ui-p-srl.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-srli > rv32ui-p-srli.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-sub > rv32ui-p-sub.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-xor > rv32ui-p-xor.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-p-xori > rv32ui-p-xori.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-simple > rv32ui-v-simple.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-add > rv32ui-v-add.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-addi > rv32ui-v-addi.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-and > rv32ui-v-and.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-andi > rv32ui-v-andi.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-auipc > rv32ui-v-auipc.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-beq > rv32ui-v-beq.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-bge > rv32ui-v-bge.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-bgeu > rv32ui-v-bgeu.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-blt > rv32ui-v-blt.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-bltu > rv32ui-v-bltu.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-bne > rv32ui-v-bne.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-fence_i > rv32ui-v-fence_i.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-jal > rv32ui-v-jal.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-jalr > rv32ui-v-jalr.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-lb > rv32ui-v-lb.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-lbu > rv32ui-v-lbu.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-lh > rv32ui-v-lh.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-lhu > rv32ui-v-lhu.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-lw > rv32ui-v-lw.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-lui > rv32ui-v-lui.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-ma_data > rv32ui-v-ma_data.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-or > rv32ui-v-or.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-ori > rv32ui-v-ori.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-sb > rv32ui-v-sb.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-sh > rv32ui-v-sh.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-sw > rv32ui-v-sw.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-sll > rv32ui-v-sll.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-slli > rv32ui-v-slli.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-slt > rv32ui-v-slt.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-slti > rv32ui-v-slti.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-sltiu > rv32ui-v-sltiu.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-sltu > rv32ui-v-sltu.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-sra > rv32ui-v-sra.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-srai > rv32ui-v-srai.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-srl > rv32ui-v-srl.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-srli > rv32ui-v-srli.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-sub > rv32ui-v-sub.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-xor > rv32ui-v-xor.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32ui-v-xori > rv32ui-v-xori.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32si-p-csr > rv32si-p-csr.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32si-p-dirty > rv32si-p-dirty.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32si-p-ma_fetch > rv32si-p-ma_fetch.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32si-p-scall > rv32si-p-scall.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32si-p-sbreak > rv32si-p-sbreak.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32si-p-wfi > rv32si-p-wfi.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32mi-p-breakpoint > rv32mi-p-breakpoint.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32mi-p-csr > rv32mi-p-csr.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32mi-p-mcsr > rv32mi-p-mcsr.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32mi-p-illegal > rv32mi-p-illegal.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32mi-p-ma_fetch > rv32mi-p-ma_fetch.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32mi-p-ma_addr > rv32mi-p-ma_addr.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32mi-p-scall > rv32mi-p-scall.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32mi-p-sbreak > rv32mi-p-sbreak.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32mi-p-shamt > rv32mi-p-shamt.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32mi-p-lw-misaligned > rv32mi-p-lw-misaligned.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32mi-p-lh-misaligned > rv32mi-p-lh-misaligned.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32mi-p-sh-misaligned > rv32mi-p-sh-misaligned.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32mi-p-sw-misaligned > rv32mi-p-sw-misaligned.dump.human
+riscv32-unknown-elf-objdump -S -M no-aliases -M numeric rv32mi-p-zicntr > rv32mi-p-zicntr.dump.human
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-simple rv32ui-p-simple.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-add rv32ui-p-add.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-addi rv32ui-p-addi.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-and rv32ui-p-and.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-andi rv32ui-p-andi.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-auipc rv32ui-p-auipc.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-beq rv32ui-p-beq.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-bge rv32ui-p-bge.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-bgeu rv32ui-p-bgeu.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-blt rv32ui-p-blt.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-bltu rv32ui-p-bltu.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-bne rv32ui-p-bne.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-fence_i rv32ui-p-fence_i.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-jal rv32ui-p-jal.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-jalr rv32ui-p-jalr.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-lb rv32ui-p-lb.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-lbu rv32ui-p-lbu.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-lh rv32ui-p-lh.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-lhu rv32ui-p-lhu.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-lw rv32ui-p-lw.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-lui rv32ui-p-lui.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-ma_data rv32ui-p-ma_data.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-or rv32ui-p-or.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-ori rv32ui-p-ori.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-sb rv32ui-p-sb.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-sh rv32ui-p-sh.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-sw rv32ui-p-sw.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-sll rv32ui-p-sll.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-slli rv32ui-p-slli.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-slt rv32ui-p-slt.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-slti rv32ui-p-slti.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-sltiu rv32ui-p-sltiu.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-sltu rv32ui-p-sltu.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-sra rv32ui-p-sra.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-srai rv32ui-p-srai.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-srl rv32ui-p-srl.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-srli rv32ui-p-srli.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-sub rv32ui-p-sub.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-xor rv32ui-p-xor.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-p-xori rv32ui-p-xori.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-simple rv32ui-v-simple.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-add rv32ui-v-add.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-addi rv32ui-v-addi.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-and rv32ui-v-and.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-andi rv32ui-v-andi.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-auipc rv32ui-v-auipc.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-beq rv32ui-v-beq.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-bge rv32ui-v-bge.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-bgeu rv32ui-v-bgeu.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-blt rv32ui-v-blt.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-bltu rv32ui-v-bltu.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-bne rv32ui-v-bne.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-fence_i rv32ui-v-fence_i.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-jal rv32ui-v-jal.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-jalr rv32ui-v-jalr.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-lb rv32ui-v-lb.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-lbu rv32ui-v-lbu.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-lh rv32ui-v-lh.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-lhu rv32ui-v-lhu.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-lw rv32ui-v-lw.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-lui rv32ui-v-lui.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-ma_data rv32ui-v-ma_data.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-or rv32ui-v-or.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-ori rv32ui-v-ori.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-sb rv32ui-v-sb.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-sh rv32ui-v-sh.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-sw rv32ui-v-sw.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-sll rv32ui-v-sll.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-slli rv32ui-v-slli.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-slt rv32ui-v-slt.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-slti rv32ui-v-slti.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-sltiu rv32ui-v-sltiu.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-sltu rv32ui-v-sltu.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-sra rv32ui-v-sra.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-srai rv32ui-v-srai.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-srl rv32ui-v-srl.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-srli rv32ui-v-srli.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-sub rv32ui-v-sub.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-xor rv32ui-v-xor.bin
+riscv32-unknown-elf-objcopy -O binary rv32ui-v-xori rv32ui-v-xori.bin
+riscv32-unknown-elf-objcopy -O binary rv32si-p-csr rv32si-p-csr.bin
+riscv32-unknown-elf-objcopy -O binary rv32si-p-dirty rv32si-p-dirty.bin
+riscv32-unknown-elf-objcopy -O binary rv32si-p-ma_fetch rv32si-p-ma_fetch.bin
+riscv32-unknown-elf-objcopy -O binary rv32si-p-scall rv32si-p-scall.bin
+riscv32-unknown-elf-objcopy -O binary rv32si-p-sbreak rv32si-p-sbreak.bin
+riscv32-unknown-elf-objcopy -O binary rv32si-p-wfi rv32si-p-wfi.bin
+riscv32-unknown-elf-objcopy -O binary rv32mi-p-breakpoint rv32mi-p-breakpoint.bin
+riscv32-unknown-elf-objcopy -O binary rv32mi-p-csr rv32mi-p-csr.bin
+riscv32-unknown-elf-objcopy -O binary rv32mi-p-mcsr rv32mi-p-mcsr.bin
+riscv32-unknown-elf-objcopy -O binary rv32mi-p-illegal rv32mi-p-illegal.bin
+riscv32-unknown-elf-objcopy -O binary rv32mi-p-ma_fetch rv32mi-p-ma_fetch.bin
+riscv32-unknown-elf-objcopy -O binary rv32mi-p-ma_addr rv32mi-p-ma_addr.bin
+riscv32-unknown-elf-objcopy -O binary rv32mi-p-scall rv32mi-p-scall.bin
+riscv32-unknown-elf-objcopy -O binary rv32mi-p-sbreak rv32mi-p-sbreak.bin
+riscv32-unknown-elf-objcopy -O binary rv32mi-p-shamt rv32mi-p-shamt.bin
+riscv32-unknown-elf-objcopy -O binary rv32mi-p-lw-misaligned rv32mi-p-lw-misaligned.bin
+riscv32-unknown-elf-objcopy -O binary rv32mi-p-lh-misaligned rv32mi-p-lh-misaligned.bin
+riscv32-unknown-elf-objcopy -O binary rv32mi-p-sh-misaligned rv32mi-p-sh-misaligned.bin
+riscv32-unknown-elf-objcopy -O binary rv32mi-p-sw-misaligned rv32mi-p-sw-misaligned.bin
+riscv32-unknown-elf-objcopy -O binary rv32mi-p-zicntr rv32mi-p-zicntr.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-simple rv32ui-p-simple.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-add rv32ui-p-add.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-addi rv32ui-p-addi.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-and rv32ui-p-and.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-andi rv32ui-p-andi.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-auipc rv32ui-p-auipc.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-beq rv32ui-p-beq.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-bge rv32ui-p-bge.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-bgeu rv32ui-p-bgeu.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-blt rv32ui-p-blt.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-bltu rv32ui-p-bltu.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-bne rv32ui-p-bne.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-fence_i rv32ui-p-fence_i.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-jal rv32ui-p-jal.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-jalr rv32ui-p-jalr.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-lb rv32ui-p-lb.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-lbu rv32ui-p-lbu.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-lh rv32ui-p-lh.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-lhu rv32ui-p-lhu.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-lw rv32ui-p-lw.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-lui rv32ui-p-lui.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-ma_data rv32ui-p-ma_data.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-or rv32ui-p-or.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-ori rv32ui-p-ori.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-sb rv32ui-p-sb.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-sh rv32ui-p-sh.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-sw rv32ui-p-sw.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-sll rv32ui-p-sll.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-slli rv32ui-p-slli.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-slt rv32ui-p-slt.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-slti rv32ui-p-slti.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-sltiu rv32ui-p-sltiu.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-sltu rv32ui-p-sltu.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-sra rv32ui-p-sra.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-srai rv32ui-p-srai.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-srl rv32ui-p-srl.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-srli rv32ui-p-srli.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-sub rv32ui-p-sub.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-xor rv32ui-p-xor.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-p-xori rv32ui-p-xori.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-simple rv32ui-v-simple.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-add rv32ui-v-add.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-addi rv32ui-v-addi.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-and rv32ui-v-and.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-andi rv32ui-v-andi.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-auipc rv32ui-v-auipc.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-beq rv32ui-v-beq.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-bge rv32ui-v-bge.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-bgeu rv32ui-v-bgeu.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-blt rv32ui-v-blt.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-bltu rv32ui-v-bltu.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-bne rv32ui-v-bne.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-fence_i rv32ui-v-fence_i.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-jal rv32ui-v-jal.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-jalr rv32ui-v-jalr.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-lb rv32ui-v-lb.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-lbu rv32ui-v-lbu.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-lh rv32ui-v-lh.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-lhu rv32ui-v-lhu.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-lw rv32ui-v-lw.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-lui rv32ui-v-lui.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-ma_data rv32ui-v-ma_data.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-or rv32ui-v-or.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-ori rv32ui-v-ori.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-sb rv32ui-v-sb.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-sh rv32ui-v-sh.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-sw rv32ui-v-sw.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-sll rv32ui-v-sll.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-slli rv32ui-v-slli.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-slt rv32ui-v-slt.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-slti rv32ui-v-slti.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-sltiu rv32ui-v-sltiu.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-sltu rv32ui-v-sltu.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-sra rv32ui-v-sra.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-srai rv32ui-v-srai.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-srl rv32ui-v-srl.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-srli rv32ui-v-srli.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-sub rv32ui-v-sub.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-xor rv32ui-v-xor.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32ui-v-xori rv32ui-v-xori.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32si-p-csr rv32si-p-csr.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32si-p-dirty rv32si-p-dirty.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32si-p-ma_fetch rv32si-p-ma_fetch.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32si-p-scall rv32si-p-scall.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32si-p-sbreak rv32si-p-sbreak.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32si-p-wfi rv32si-p-wfi.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32mi-p-breakpoint rv32mi-p-breakpoint.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32mi-p-csr rv32mi-p-csr.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32mi-p-mcsr rv32mi-p-mcsr.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32mi-p-illegal rv32mi-p-illegal.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32mi-p-ma_fetch rv32mi-p-ma_fetch.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32mi-p-ma_addr rv32mi-p-ma_addr.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32mi-p-scall rv32mi-p-scall.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32mi-p-sbreak rv32mi-p-sbreak.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32mi-p-shamt rv32mi-p-shamt.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32mi-p-lw-misaligned rv32mi-p-lw-misaligned.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32mi-p-lh-misaligned rv32mi-p-lh-misaligned.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32mi-p-sh-misaligned rv32mi-p-sh-misaligned.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32mi-p-sw-misaligned rv32mi-p-sw-misaligned.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.text rv32mi-p-zicntr rv32mi-p-zicntr.text.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-simple rv32ui-p-simple.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-add rv32ui-p-add.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-addi rv32ui-p-addi.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-and rv32ui-p-and.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-andi rv32ui-p-andi.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-auipc rv32ui-p-auipc.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-beq rv32ui-p-beq.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-bge rv32ui-p-bge.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-bgeu rv32ui-p-bgeu.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-blt rv32ui-p-blt.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-bltu rv32ui-p-bltu.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-bne rv32ui-p-bne.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-fence_i rv32ui-p-fence_i.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-jal rv32ui-p-jal.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-jalr rv32ui-p-jalr.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-lb rv32ui-p-lb.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-lbu rv32ui-p-lbu.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-lh rv32ui-p-lh.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-lhu rv32ui-p-lhu.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-lw rv32ui-p-lw.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-lui rv32ui-p-lui.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-ma_data rv32ui-p-ma_data.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-or rv32ui-p-or.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-ori rv32ui-p-ori.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-sb rv32ui-p-sb.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-sh rv32ui-p-sh.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-sw rv32ui-p-sw.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-sll rv32ui-p-sll.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-slli rv32ui-p-slli.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-slt rv32ui-p-slt.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-slti rv32ui-p-slti.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-sltiu rv32ui-p-sltiu.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-sltu rv32ui-p-sltu.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-sra rv32ui-p-sra.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-srai rv32ui-p-srai.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-srl rv32ui-p-srl.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-srli rv32ui-p-srli.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-sub rv32ui-p-sub.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-xor rv32ui-p-xor.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-p-xori rv32ui-p-xori.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-simple rv32ui-v-simple.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-add rv32ui-v-add.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-addi rv32ui-v-addi.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-and rv32ui-v-and.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-andi rv32ui-v-andi.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-auipc rv32ui-v-auipc.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-beq rv32ui-v-beq.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-bge rv32ui-v-bge.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-bgeu rv32ui-v-bgeu.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-blt rv32ui-v-blt.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-bltu rv32ui-v-bltu.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-bne rv32ui-v-bne.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-fence_i rv32ui-v-fence_i.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-jal rv32ui-v-jal.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-jalr rv32ui-v-jalr.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-lb rv32ui-v-lb.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-lbu rv32ui-v-lbu.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-lh rv32ui-v-lh.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-lhu rv32ui-v-lhu.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-lw rv32ui-v-lw.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-lui rv32ui-v-lui.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-ma_data rv32ui-v-ma_data.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-or rv32ui-v-or.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-ori rv32ui-v-ori.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-sb rv32ui-v-sb.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-sh rv32ui-v-sh.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-sw rv32ui-v-sw.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-sll rv32ui-v-sll.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-slli rv32ui-v-slli.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-slt rv32ui-v-slt.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-slti rv32ui-v-slti.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-sltiu rv32ui-v-sltiu.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-sltu rv32ui-v-sltu.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-sra rv32ui-v-sra.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-srai rv32ui-v-srai.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-srl rv32ui-v-srl.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-srli rv32ui-v-srli.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-sub rv32ui-v-sub.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-xor rv32ui-v-xor.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32ui-v-xori rv32ui-v-xori.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32si-p-csr rv32si-p-csr.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32si-p-dirty rv32si-p-dirty.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32si-p-ma_fetch rv32si-p-ma_fetch.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32si-p-scall rv32si-p-scall.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32si-p-sbreak rv32si-p-sbreak.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32si-p-wfi rv32si-p-wfi.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32mi-p-breakpoint rv32mi-p-breakpoint.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32mi-p-csr rv32mi-p-csr.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32mi-p-mcsr rv32mi-p-mcsr.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32mi-p-illegal rv32mi-p-illegal.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32mi-p-ma_fetch rv32mi-p-ma_fetch.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32mi-p-ma_addr rv32mi-p-ma_addr.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32mi-p-scall rv32mi-p-scall.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32mi-p-sbreak rv32mi-p-sbreak.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32mi-p-shamt rv32mi-p-shamt.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32mi-p-lw-misaligned rv32mi-p-lw-misaligned.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32mi-p-lh-misaligned rv32mi-p-lh-misaligned.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32mi-p-sh-misaligned rv32mi-p-sh-misaligned.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32mi-p-sw-misaligned rv32mi-p-sw-misaligned.data.bin
+riscv32-unknown-elf-objcopy -O binary --only-section=.data rv32mi-p-zicntr rv32mi-p-zicntr.data.bin
+../create_mem.sh rv32ui-p-simple.bin
+../create_mem.sh rv32ui-p-add.bin
+../create_mem.sh rv32ui-p-addi.bin
+../create_mem.sh rv32ui-p-and.bin
+../create_mem.sh rv32ui-p-andi.bin
+../create_mem.sh rv32ui-p-auipc.bin
+../create_mem.sh rv32ui-p-beq.bin
+../create_mem.sh rv32ui-p-bge.bin
+../create_mem.sh rv32ui-p-bgeu.bin
+../create_mem.sh rv32ui-p-blt.bin
+../create_mem.sh rv32ui-p-bltu.bin
+../create_mem.sh rv32ui-p-bne.bin
+../create_mem.sh rv32ui-p-fence_i.bin
+../create_mem.sh rv32ui-p-jal.bin
+../create_mem.sh rv32ui-p-jalr.bin
+../create_mem.sh rv32ui-p-lb.bin
+../create_mem.sh rv32ui-p-lbu.bin
+../create_mem.sh rv32ui-p-lh.bin
+../create_mem.sh rv32ui-p-lhu.bin
+../create_mem.sh rv32ui-p-lw.bin
+../create_mem.sh rv32ui-p-lui.bin
+../create_mem.sh rv32ui-p-ma_data.bin
+../create_mem.sh rv32ui-p-or.bin
+../create_mem.sh rv32ui-p-ori.bin
+../create_mem.sh rv32ui-p-sb.bin
+../create_mem.sh rv32ui-p-sh.bin
+../create_mem.sh rv32ui-p-sw.bin
+../create_mem.sh rv32ui-p-sll.bin
+../create_mem.sh rv32ui-p-slli.bin
+../create_mem.sh rv32ui-p-slt.bin
+../create_mem.sh rv32ui-p-slti.bin
+../create_mem.sh rv32ui-p-sltiu.bin
+../create_mem.sh rv32ui-p-sltu.bin
+../create_mem.sh rv32ui-p-sra.bin
+../create_mem.sh rv32ui-p-srai.bin
+../create_mem.sh rv32ui-p-srl.bin
+../create_mem.sh rv32ui-p-srli.bin
+../create_mem.sh rv32ui-p-sub.bin
+../create_mem.sh rv32ui-p-xor.bin
+../create_mem.sh rv32ui-p-xori.bin
+../create_mem.sh rv32ui-v-simple.bin
+../create_mem.sh rv32ui-v-add.bin
+../create_mem.sh rv32ui-v-addi.bin
+../create_mem.sh rv32ui-v-and.bin
+../create_mem.sh rv32ui-v-andi.bin
+../create_mem.sh rv32ui-v-auipc.bin
+../create_mem.sh rv32ui-v-beq.bin
+../create_mem.sh rv32ui-v-bge.bin
+../create_mem.sh rv32ui-v-bgeu.bin
+../create_mem.sh rv32ui-v-blt.bin
+../create_mem.sh rv32ui-v-bltu.bin
+../create_mem.sh rv32ui-v-bne.bin
+../create_mem.sh rv32ui-v-fence_i.bin
+../create_mem.sh rv32ui-v-jal.bin
+../create_mem.sh rv32ui-v-jalr.bin
+../create_mem.sh rv32ui-v-lb.bin
+../create_mem.sh rv32ui-v-lbu.bin
+../create_mem.sh rv32ui-v-lh.bin
+../create_mem.sh rv32ui-v-lhu.bin
+../create_mem.sh rv32ui-v-lw.bin
+../create_mem.sh rv32ui-v-lui.bin
+../create_mem.sh rv32ui-v-ma_data.bin
+../create_mem.sh rv32ui-v-or.bin
+../create_mem.sh rv32ui-v-ori.bin
+../create_mem.sh rv32ui-v-sb.bin
+../create_mem.sh rv32ui-v-sh.bin
+../create_mem.sh rv32ui-v-sw.bin
+../create_mem.sh rv32ui-v-sll.bin
+../create_mem.sh rv32ui-v-slli.bin
+../create_mem.sh rv32ui-v-slt.bin
+../create_mem.sh rv32ui-v-slti.bin
+../create_mem.sh rv32ui-v-sltiu.bin
+../create_mem.sh rv32ui-v-sltu.bin
+../create_mem.sh rv32ui-v-sra.bin
+../create_mem.sh rv32ui-v-srai.bin
+../create_mem.sh rv32ui-v-srl.bin
+../create_mem.sh rv32ui-v-srli.bin
+../create_mem.sh rv32ui-v-sub.bin
+../create_mem.sh rv32ui-v-xor.bin
+../create_mem.sh rv32ui-v-xori.bin
+../create_mem.sh rv32si-p-csr.bin
+../create_mem.sh rv32si-p-dirty.bin
+../create_mem.sh rv32si-p-ma_fetch.bin
+../create_mem.sh rv32si-p-scall.bin
+../create_mem.sh rv32si-p-sbreak.bin
+../create_mem.sh rv32si-p-wfi.bin
+../create_mem.sh rv32mi-p-breakpoint.bin
+../create_mem.sh rv32mi-p-csr.bin
+../create_mem.sh rv32mi-p-mcsr.bin
+../create_mem.sh rv32mi-p-illegal.bin
+../create_mem.sh rv32mi-p-ma_fetch.bin
+../create_mem.sh rv32mi-p-ma_addr.bin
+../create_mem.sh rv32mi-p-scall.bin
+../create_mem.sh rv32mi-p-sbreak.bin
+../create_mem.sh rv32mi-p-shamt.bin
+../create_mem.sh rv32mi-p-lw-misaligned.bin
+../create_mem.sh rv32mi-p-lh-misaligned.bin
+../create_mem.sh rv32mi-p-sh-misaligned.bin
+../create_mem.sh rv32mi-p-sw-misaligned.bin
+../create_mem.sh rv32mi-p-zicntr.bin
+../create_mem.sh rv32ui-p-simple.text.bin
+../create_mem.sh rv32ui-p-add.text.bin
+../create_mem.sh rv32ui-p-addi.text.bin
+../create_mem.sh rv32ui-p-and.text.bin
+../create_mem.sh rv32ui-p-andi.text.bin
+../create_mem.sh rv32ui-p-auipc.text.bin
+../create_mem.sh rv32ui-p-beq.text.bin
+../create_mem.sh rv32ui-p-bge.text.bin
+../create_mem.sh rv32ui-p-bgeu.text.bin
+../create_mem.sh rv32ui-p-blt.text.bin
+../create_mem.sh rv32ui-p-bltu.text.bin
+../create_mem.sh rv32ui-p-bne.text.bin
+../create_mem.sh rv32ui-p-fence_i.text.bin
+../create_mem.sh rv32ui-p-jal.text.bin
+../create_mem.sh rv32ui-p-jalr.text.bin
+../create_mem.sh rv32ui-p-lb.text.bin
+../create_mem.sh rv32ui-p-lbu.text.bin
+../create_mem.sh rv32ui-p-lh.text.bin
+../create_mem.sh rv32ui-p-lhu.text.bin
+../create_mem.sh rv32ui-p-lw.text.bin
+../create_mem.sh rv32ui-p-lui.text.bin
+../create_mem.sh rv32ui-p-ma_data.text.bin
+../create_mem.sh rv32ui-p-or.text.bin
+../create_mem.sh rv32ui-p-ori.text.bin
+../create_mem.sh rv32ui-p-sb.text.bin
+../create_mem.sh rv32ui-p-sh.text.bin
+../create_mem.sh rv32ui-p-sw.text.bin
+../create_mem.sh rv32ui-p-sll.text.bin
+../create_mem.sh rv32ui-p-slli.text.bin
+../create_mem.sh rv32ui-p-slt.text.bin
+../create_mem.sh rv32ui-p-slti.text.bin
+../create_mem.sh rv32ui-p-sltiu.text.bin
+../create_mem.sh rv32ui-p-sltu.text.bin
+../create_mem.sh rv32ui-p-sra.text.bin
+../create_mem.sh rv32ui-p-srai.text.bin
+../create_mem.sh rv32ui-p-srl.text.bin
+../create_mem.sh rv32ui-p-srli.text.bin
+../create_mem.sh rv32ui-p-sub.text.bin
+../create_mem.sh rv32ui-p-xor.text.bin
+../create_mem.sh rv32ui-p-xori.text.bin
+../create_mem.sh rv32ui-v-simple.text.bin
+../create_mem.sh rv32ui-v-add.text.bin
+../create_mem.sh rv32ui-v-addi.text.bin
+../create_mem.sh rv32ui-v-and.text.bin
+../create_mem.sh rv32ui-v-andi.text.bin
+../create_mem.sh rv32ui-v-auipc.text.bin
+../create_mem.sh rv32ui-v-beq.text.bin
+../create_mem.sh rv32ui-v-bge.text.bin
+../create_mem.sh rv32ui-v-bgeu.text.bin
+../create_mem.sh rv32ui-v-blt.text.bin
+../create_mem.sh rv32ui-v-bltu.text.bin
+../create_mem.sh rv32ui-v-bne.text.bin
+../create_mem.sh rv32ui-v-fence_i.text.bin
+../create_mem.sh rv32ui-v-jal.text.bin
+../create_mem.sh rv32ui-v-jalr.text.bin
+../create_mem.sh rv32ui-v-lb.text.bin
+../create_mem.sh rv32ui-v-lbu.text.bin
+../create_mem.sh rv32ui-v-lh.text.bin
+../create_mem.sh rv32ui-v-lhu.text.bin
+../create_mem.sh rv32ui-v-lw.text.bin
+../create_mem.sh rv32ui-v-lui.text.bin
+../create_mem.sh rv32ui-v-ma_data.text.bin
+../create_mem.sh rv32ui-v-or.text.bin
+../create_mem.sh rv32ui-v-ori.text.bin
+../create_mem.sh rv32ui-v-sb.text.bin
+../create_mem.sh rv32ui-v-sh.text.bin
+../create_mem.sh rv32ui-v-sw.text.bin
+../create_mem.sh rv32ui-v-sll.text.bin
+../create_mem.sh rv32ui-v-slli.text.bin
+../create_mem.sh rv32ui-v-slt.text.bin
+../create_mem.sh rv32ui-v-slti.text.bin
+../create_mem.sh rv32ui-v-sltiu.text.bin
+../create_mem.sh rv32ui-v-sltu.text.bin
+../create_mem.sh rv32ui-v-sra.text.bin
+../create_mem.sh rv32ui-v-srai.text.bin
+../create_mem.sh rv32ui-v-srl.text.bin
+../create_mem.sh rv32ui-v-srli.text.bin
+../create_mem.sh rv32ui-v-sub.text.bin
+../create_mem.sh rv32ui-v-xor.text.bin
+../create_mem.sh rv32ui-v-xori.text.bin
+../create_mem.sh rv32si-p-csr.text.bin
+../create_mem.sh rv32si-p-dirty.text.bin
+../create_mem.sh rv32si-p-ma_fetch.text.bin
+../create_mem.sh rv32si-p-scall.text.bin
+../create_mem.sh rv32si-p-sbreak.text.bin
+../create_mem.sh rv32si-p-wfi.text.bin
+../create_mem.sh rv32mi-p-breakpoint.text.bin
+../create_mem.sh rv32mi-p-csr.text.bin
+../create_mem.sh rv32mi-p-mcsr.text.bin
+../create_mem.sh rv32mi-p-illegal.text.bin
+../create_mem.sh rv32mi-p-ma_fetch.text.bin
+../create_mem.sh rv32mi-p-ma_addr.text.bin
+../create_mem.sh rv32mi-p-scall.text.bin
+../create_mem.sh rv32mi-p-sbreak.text.bin
+../create_mem.sh rv32mi-p-shamt.text.bin
+../create_mem.sh rv32mi-p-lw-misaligned.text.bin
+../create_mem.sh rv32mi-p-lh-misaligned.text.bin
+../create_mem.sh rv32mi-p-sh-misaligned.text.bin
+../create_mem.sh rv32mi-p-sw-misaligned.text.bin
+../create_mem.sh rv32mi-p-zicntr.text.bin
+../create_mem.sh rv32ui-p-simple.data.bin
+../create_mem.sh rv32ui-p-add.data.bin
+../create_mem.sh rv32ui-p-addi.data.bin
+../create_mem.sh rv32ui-p-and.data.bin
+../create_mem.sh rv32ui-p-andi.data.bin
+../create_mem.sh rv32ui-p-auipc.data.bin
+../create_mem.sh rv32ui-p-beq.data.bin
+../create_mem.sh rv32ui-p-bge.data.bin
+../create_mem.sh rv32ui-p-bgeu.data.bin
+../create_mem.sh rv32ui-p-blt.data.bin
+../create_mem.sh rv32ui-p-bltu.data.bin
+../create_mem.sh rv32ui-p-bne.data.bin
+../create_mem.sh rv32ui-p-fence_i.data.bin
+../create_mem.sh rv32ui-p-jal.data.bin
+../create_mem.sh rv32ui-p-jalr.data.bin
+../create_mem.sh rv32ui-p-lb.data.bin
+../create_mem.sh rv32ui-p-lbu.data.bin
+../create_mem.sh rv32ui-p-lh.data.bin
+../create_mem.sh rv32ui-p-lhu.data.bin
+../create_mem.sh rv32ui-p-lw.data.bin
+../create_mem.sh rv32ui-p-lui.data.bin
+../create_mem.sh rv32ui-p-ma_data.data.bin
+../create_mem.sh rv32ui-p-or.data.bin
+../create_mem.sh rv32ui-p-ori.data.bin
+../create_mem.sh rv32ui-p-sb.data.bin
+../create_mem.sh rv32ui-p-sh.data.bin
+../create_mem.sh rv32ui-p-sw.data.bin
+../create_mem.sh rv32ui-p-sll.data.bin
+../create_mem.sh rv32ui-p-slli.data.bin
+../create_mem.sh rv32ui-p-slt.data.bin
+../create_mem.sh rv32ui-p-slti.data.bin
+../create_mem.sh rv32ui-p-sltiu.data.bin
+../create_mem.sh rv32ui-p-sltu.data.bin
+../create_mem.sh rv32ui-p-sra.data.bin
+../create_mem.sh rv32ui-p-srai.data.bin
+../create_mem.sh rv32ui-p-srl.data.bin
+../create_mem.sh rv32ui-p-srli.data.bin
+../create_mem.sh rv32ui-p-sub.data.bin
+../create_mem.sh rv32ui-p-xor.data.bin
+../create_mem.sh rv32ui-p-xori.data.bin
+../create_mem.sh rv32ui-v-simple.data.bin
+../create_mem.sh rv32ui-v-add.data.bin
+../create_mem.sh rv32ui-v-addi.data.bin
+../create_mem.sh rv32ui-v-and.data.bin
+../create_mem.sh rv32ui-v-andi.data.bin
+../create_mem.sh rv32ui-v-auipc.data.bin
+../create_mem.sh rv32ui-v-beq.data.bin
+../create_mem.sh rv32ui-v-bge.data.bin
+../create_mem.sh rv32ui-v-bgeu.data.bin
+../create_mem.sh rv32ui-v-blt.data.bin
+../create_mem.sh rv32ui-v-bltu.data.bin
+../create_mem.sh rv32ui-v-bne.data.bin
+../create_mem.sh rv32ui-v-fence_i.data.bin
+../create_mem.sh rv32ui-v-jal.data.bin
+../create_mem.sh rv32ui-v-jalr.data.bin
+../create_mem.sh rv32ui-v-lb.data.bin
+../create_mem.sh rv32ui-v-lbu.data.bin
+../create_mem.sh rv32ui-v-lh.data.bin
+../create_mem.sh rv32ui-v-lhu.data.bin
+../create_mem.sh rv32ui-v-lw.data.bin
+../create_mem.sh rv32ui-v-lui.data.bin
+../create_mem.sh rv32ui-v-ma_data.data.bin
+../create_mem.sh rv32ui-v-or.data.bin
+../create_mem.sh rv32ui-v-ori.data.bin
+../create_mem.sh rv32ui-v-sb.data.bin
+../create_mem.sh rv32ui-v-sh.data.bin
+../create_mem.sh rv32ui-v-sw.data.bin
+../create_mem.sh rv32ui-v-sll.data.bin
+../create_mem.sh rv32ui-v-slli.data.bin
+../create_mem.sh rv32ui-v-slt.data.bin
+../create_mem.sh rv32ui-v-slti.data.bin
+../create_mem.sh rv32ui-v-sltiu.data.bin
+../create_mem.sh rv32ui-v-sltu.data.bin
+../create_mem.sh rv32ui-v-sra.data.bin
+../create_mem.sh rv32ui-v-srai.data.bin
+../create_mem.sh rv32ui-v-srl.data.bin
+../create_mem.sh rv32ui-v-srli.data.bin
+../create_mem.sh rv32ui-v-sub.data.bin
+../create_mem.sh rv32ui-v-xor.data.bin
+../create_mem.sh rv32ui-v-xori.data.bin
+../create_mem.sh rv32si-p-csr.data.bin
+../create_mem.sh rv32si-p-dirty.data.bin
+../create_mem.sh rv32si-p-ma_fetch.data.bin
+../create_mem.sh rv32si-p-scall.data.bin
+../create_mem.sh rv32si-p-sbreak.data.bin
+../create_mem.sh rv32si-p-wfi.data.bin
+../create_mem.sh rv32mi-p-breakpoint.data.bin
+../create_mem.sh rv32mi-p-csr.data.bin
+../create_mem.sh rv32mi-p-mcsr.data.bin
+../create_mem.sh rv32mi-p-illegal.data.bin
+../create_mem.sh rv32mi-p-ma_fetch.data.bin
+../create_mem.sh rv32mi-p-ma_addr.data.bin
+../create_mem.sh rv32mi-p-scall.data.bin
+../create_mem.sh rv32mi-p-sbreak.data.bin
+../create_mem.sh rv32mi-p-shamt.data.bin
+../create_mem.sh rv32mi-p-lw-misaligned.data.bin
+../create_mem.sh rv32mi-p-lh-misaligned.data.bin
+../create_mem.sh rv32mi-p-sh-misaligned.data.bin
+../create_mem.sh rv32mi-p-sw-misaligned.data.bin
+../create_mem.sh rv32mi-p-zicntr.data.bin
 make[1]: Leaving directory '/home/titanium/Superscalar_OoOP/falco/Software_Verification/Falco/tb/script/tmp/riscv-tests/isa'

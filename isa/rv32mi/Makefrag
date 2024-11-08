@@ -19,3 +19,4 @@ rv32mi_sc_tests = \
 	zicntr \
 
 rv32mi_p_tests = $(addprefix rv32mi-p-, $(rv32mi_sc_tests))
+rv32mi_pt_tests = $(addprefix rv32mi-pt-, $(rv32mi_sc_tests))
