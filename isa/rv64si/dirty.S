@@ -12,7 +12,7 @@
 
 # For Falco test
 #undef  DRAM_BASE
-#define DRAM_BASE 0x00010000
+#define DRAM_BASE 0x80000000
 
 #if (DRAM_BASE >> 12 << 12) != DRAM_BASE
 # error This test requires DRAM_BASE be SV32 normalpage-aligned
